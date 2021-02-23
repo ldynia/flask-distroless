@@ -4,9 +4,11 @@ services:
     build:
       context: ./app
       dockerfile: ../docker/Dockerfile
-    image: flask/demo
-    container_name: flask-demo
-    hostname: flask-dev-demo
+    image: flask/distroless
+    container_name: flask-distroless
+    hostname: flask-dev-distroless
+    ports: 
+      - 8080:8080
     volumes:
        - ./app:/app
     # command: sleep 3600
